@@ -1316,6 +1316,166 @@
                 font-size: 1.4rem;
             }
         }
+
+        /* ========================================
+           CERTIFICATIONS SECTION - NEW
+           ======================================== */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .certification-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certification-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .certification-card:hover::before {
+            opacity: 1;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
+        }
+
+        .certification-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .certification-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .certification-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .certification-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .certification-meta-item strong {
+            color: var(--accent-blue);
+        }
+
+        .certification-btn {
+            width: 100%;
+            margin-top: 1rem;
+            position: relative;
+            z-index: 100;
+            pointer-events: auto;
+        }
+
+        /* ========================================
+           VEILLE SOURCES SECTION - NEW
+           ======================================== */
+        .veille-sources {
+            margin-top: 4rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        .veille-sources h3 {
+            font-size: 2rem;
+            color: var(--accent-blue);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .sources-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .source-badge {
+            padding: 1rem 1.5rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 2px solid var(--accent-blue);
+            border-radius: 12px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .source-badge:hover {
+            background: var(--accent-blue);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .veille-impact {
+            margin-top: 3rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        .veille-impact h4 {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .veille-impact p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
     </style>
 </head>
 <body>
@@ -1327,6 +1487,7 @@
             <li><a href="#accueil">🏠 Accueil</a></li>
             <li><a href="#parcours">🎓 Parcours</a></li>
             <li><a href="#competences">⚙️ Compétences</a></li>
+            <li><a href="#certifications">🎯 Certifications</a></li>
             <li><a href="#projets">💼 Projets</a></li>
             <li><a href="#veille">🔍 Veille</a></li>
             <li><a href="#contact">📧 Contact</a></li>
@@ -1341,7 +1502,7 @@
             <div class="hero-content">
                 <!-- Photo de profil -->
                 <div class="profile-image-container">
-                <img src="photo_profile.png" alt="Photo de Félix Leroux">
+                    <img src="assets/img/photo_profile.png" alt="Félix LEROUX">
                 </div>
 
                 <div class="hero-tag">BTS SIO SISR - 2ème année</div>
@@ -1626,6 +1787,66 @@
     </section>
 
     <!-- ========================================
+         SECTION CERTIFICATIONS - NEW
+         ======================================== -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications & Formations</h2>
+            <p class="competences-intro">
+                Certifications et formations complémentaires obtenues pour renforcer mes compétences techniques.
+            </p>
+
+            <div class="certifications-grid">
+                <!-- Certification PIX -->
+                <div class="certification-card">
+                    <div class="certification-icon">🎯</div>
+                    <h3 class="certification-title">Certification PIX</h3>
+                    <div class="certification-meta">
+                        <div class="certification-meta-item">
+                            <span>📅</span>
+                            <span><strong>Date :</strong> 2026</span>
+                        </div>
+                        <div class="certification-meta-item">
+                            <span>📊</span>
+                            <span><strong>Niveau :</strong> Certification des compétences numériques</span>
+                        </div>
+                        <div class="certification-meta-item">
+                            <span>✅</span>
+                            <span><strong>Domaines :</strong> Information, Communication, Création, Sécurité, Environnement numérique</span>
+                        </div>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1aM1GOSql-_0DMaBHS36DB-55oYtRZq5t/view?usp=sharing" target="_blank" class="btn btn-primary certification-btn">
+                        📄 Voir le certificat
+                    </a>
+                </div>
+
+                <!-- Certification ANSSI -->
+                <div class="certification-card">
+                    <div class="certification-icon">🔐</div>
+                    <h3 class="certification-title">ANSSI SecNumAcadémie</h3>
+                    <div class="certification-meta">
+                        <div class="certification-meta-item">
+                            <span>📅</span>
+                            <span><strong>Date :</strong> 2025</span>
+                        </div>
+                        <div class="certification-meta-item">
+                            <span>🎓</span>
+                            <span><strong>Formation :</strong> Sensibilisation à la cybersécurité</span>
+                        </div>
+                        <div class="certification-meta-item">
+                            <span>✅</span>
+                            <span><strong>Thèmes :</strong> Sécurité des systèmes, protection des données, bonnes pratiques cyber</span>
+                        </div>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1HwBli86TgmoaLChghjHcYyN7Bb5NRs5j/view?usp=sharing" target="_blank" class="btn btn-primary certification-btn">
+                        📄 Voir l'attestation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
          SECTION PROJETS
          ======================================== -->
     <section id="projets">
@@ -1657,6 +1878,42 @@
                             <span class="tag">Sécurité</span>
                             <span class="tag">RGPD</span>
                             <span class="tag">Documentation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW: Projet Stage: Supervision Zabbix -->
+                <div class="project-card" data-category="internship" onclick="openProjectModal('zabbix')">
+                    <div class="project-image">📡</div>
+                    <div class="project-content">
+                        <p class="project-category">Stage DGFIP</p>
+                        <h3 class="project-title">Supervision avec Zabbix</h3>
+                        <p class="project-description">
+                            Déploiement d'une solution de supervision Zabbix pour monitorer l'infrastructure réseau et serveurs.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Zabbix</span>
+                            <span class="tag">SNMP</span>
+                            <span class="tag">Monitoring</span>
+                            <span class="tag">Alertes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW: Projet Stage: VPN -->
+                <div class="project-card" data-category="internship" onclick="openProjectModal('vpn')">
+                    <div class="project-image">🔒</div>
+                    <div class="project-content">
+                        <p class="project-category">Stage DGFIP</p>
+                        <h3 class="project-title">Configuration VPN utilisateurs</h3>
+                        <p class="project-description">
+                            Installation et configuration de clients VPN sur les postes utilisateurs pour l'accès distant sécurisé.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">VPN</span>
+                            <span class="tag">OpenVPN</span>
+                            <span class="tag">Accès distant</span>
+                            <span class="tag">Sécurité</span>
                         </div>
                     </div>
                 </div>
@@ -1938,6 +2195,51 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- NEW: Sources consultées -->
+            <div class="veille-sources">
+                <h3>📚 Sources consultées</h3>
+                <div class="sources-grid">
+                    <a href="https://www.silicon.fr" target="_blank" class="source-badge">
+                        🌐 Silicon.fr
+                    </a>
+                    <a href="https://www.lemagit.fr" target="_blank" class="source-badge">
+                        💻 LeMagIT
+                    </a>
+                    <a href="https://www.itpro.fr" target="_blank" class="source-badge">
+                        📰 IT Pro
+                    </a>
+                    <a href="https://www.zdnet.fr" target="_blank" class="source-badge">
+                        🔷 ZDNet
+                    </a>
+                    <a href="https://www.undernews.fr" target="_blank" class="source-badge">
+                        📡 UnderNews
+                    </a>
+                    <a href="https://www.nextinpact.com" target="_blank" class="source-badge">
+                        ⚡ Next INpact
+                    </a>
+                    <a href="https://www.synology.com/fr-fr/knowledgebase" target="_blank" class="source-badge">
+                        📦 Synology KB
+                    </a>
+                    <a href="https://docs.microsoft.com/fr-fr/azure" target="_blank" class="source-badge">
+                        ☁️ Microsoft Azure Docs
+                    </a>
+                    <a href="https://aws.amazon.com/fr/backup/" target="_blank" class="source-badge">
+                        🔶 AWS Backup
+                    </a>
+                    <a href="https://www.veeam.com/fr/blog" target="_blank" class="source-badge">
+                        💾 Veeam Blog
+                    </a>
+                </div>
+            </div>
+
+            <!-- NEW: Impact sur le métier -->
+            <div class="veille-impact">
+                <h4>💡 Impact de la veille sur le métier d'administrateur systèmes & réseaux</h4>
+                <p>
+                    La veille technologique sur les solutions de stockage et de sauvegarde est cruciale pour un administrateur systèmes et réseaux. Elle permet de rester informé des évolutions technologiques (NVMe, stockage objet, déduplication), d'anticiper les obsolescences matérielles et de proposer des solutions adaptées aux besoins métier. Cette veille aide également à évaluer les coûts (TCO cloud vs on-premise), à garantir la conformité réglementaire (RGPD, souveraineté des données) et à optimiser les stratégies de sauvegarde (3-2-1, PRA/PCA). En maîtrisant ces enjeux, l'administrateur peut conseiller efficacement sa direction sur les investissements IT et assurer la pérennité des données de l'entreprise face aux risques de sinistre, de ransomware ou de panne matérielle.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -2104,6 +2406,187 @@
                         </p>
                         <p>
                             <strong>Compétences développées :</strong> Maîtrise des outils d'effacement sécurisé, compréhension des enjeux de confidentialité et de conformité réglementaire.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEW: Modal Zabbix -->
+    <div id="modal-zabbix" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeProjectModal('zabbix')">&times;</span>
+            <div class="modal-header">
+                <p class="modal-category">📡 Stage DGFIP - Supervision</p>
+                <h2 class="modal-title">Supervision avec Zabbix</h2>
+            </div>
+            <div class="modal-body">
+                <!-- Contexte -->
+                <div class="procedure-section">
+                    <h3>📋 Contexte</h3>
+                    <div class="procedure-content">
+                        <p>
+                            Durant mon stage à la DGFIP, j'ai participé au déploiement d'une solution de supervision Zabbix pour monitorer l'infrastructure informatique du service. L'objectif était de remplacer un ancien système de monitoring devenu obsolète.
+                        </p>
+                        <p>
+                            <strong>Objectif :</strong> Mettre en place une supervision centralisée permettant de détecter proactivement les incidents sur les serveurs, équipements réseau et services critiques.
+                        </p>
+                        <p>
+                            <strong>Périmètre :</strong> Supervision de serveurs Windows et Linux, switches réseau, services applicatifs et bases de données.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Zabbix 6.0</span>
+                            <span class="tech-badge">SNMP</span>
+                            <span class="tech-badge">Zabbix Agent</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">Apache</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Procédure -->
+                <div class="procedure-section">
+                    <h3>⚙️ Procédure détaillée</h3>
+                    <div class="procedure-content">
+                        <ol class="procedure-steps">
+                            <li>
+                                <strong>Installation du serveur Zabbix</strong><br>
+                                Déploiement de Zabbix Server sur une VM Ubuntu Server 22.04 LTS avec installation des composants : base de données MySQL, serveur web Apache et frontend Zabbix.
+                            </li>
+                            <li>
+                                <strong>Configuration de la base de données</strong><br>
+                                Création de la base MySQL dédiée à Zabbix, import du schéma initial et configuration des droits d'accès avec utilisateur dédié.
+                            </li>
+                            <li>
+                                <strong>Installation des agents Zabbix</strong><br>
+                                Déploiement de Zabbix Agent sur les serveurs Windows (MSI) et Linux (apt/yum) à superviser, configuration de la clé PSK pour chiffrement des communications.
+                            </li>
+                            <li>
+                                <strong>Configuration SNMP des équipements réseau</strong><br>
+                                Activation et paramétrage SNMP v2c/v3 sur les switches et routeurs, création des communautés SNMP et configuration des autorisations d'accès.
+                            </li>
+                            <li>
+                                <strong>Ajout des hôtes et templates</strong><br>
+                                Création des groupes d'hôtes (Serveurs, Réseau, Applications), ajout des équipements avec templates prédéfinis (Linux by Zabbix agent, Windows by Zabbix agent, Generic SNMP).
+                            </li>
+                            <li>
+                                <strong>Configuration des triggers et alertes</strong><br>
+                                Définition des seuils d'alerte pour chaque métrique (CPU > 90%, RAM > 85%, disque > 80%), configuration des actions avec envoi d'emails aux administrateurs.
+                            </li>
+                            <li>
+                                <strong>Création des dashboards</strong><br>
+                                Conception de tableaux de bord personnalisés avec widgets : état des serveurs, graphiques de performance, carte réseau, top des problèmes actifs.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Résultats -->
+                <div class="procedure-section">
+                    <h3>✅ Résultats</h3>
+                    <div class="procedure-content">
+                        <p>
+                            <strong>25 équipements supervisés</strong> : 12 serveurs (Windows/Linux), 8 switches, 5 services applicatifs critiques avec monitoring temps réel toutes les 60 secondes.
+                        </p>
+                        <p>
+                            <strong>Détection proactive :</strong> Le système a permis d'identifier plusieurs incidents avant impact utilisateur (saturation disque sur serveur de fichiers, interface réseau défaillante, service applicatif non démarré).
+                        </p>
+                        <p>
+                            <strong>Historique et reporting :</strong> Conservation de 90 jours d'historique permettant l'analyse de tendances et la génération de rapports mensuels sur la disponibilité des services.
+                        </p>
+                        <p>
+                            <strong>Gain de temps opérationnel :</strong> Réduction significative du temps de détection et de résolution des incidents grâce aux alertes automatiques et à la vue centralisée de l'infrastructure.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEW: Modal VPN -->
+    <div id="modal-vpn" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeProjectModal('vpn')">&times;</span>
+            <div class="modal-header">
+                <p class="modal-category">🔒 Stage DGFIP - Accès distant sécurisé</p>
+                <h2 class="modal-title">Configuration VPN utilisateurs</h2>
+            </div>
+            <div class="modal-body">
+                <!-- Contexte -->
+                <div class="procedure-section">
+                    <h3>📋 Contexte</h3>
+                    <div class="procedure-content">
+                        <p>
+                            Dans le cadre du déploiement du télétravail à la DGFIP, j'ai été chargé d'installer et de configurer les clients VPN sur les postes des utilisateurs nécessitant un accès distant sécurisé aux ressources internes.
+                        </p>
+                        <p>
+                            <strong>Objectif :</strong> Permettre aux agents de se connecter de manière sécurisée au réseau de l'administration depuis leur domicile ou en déplacement, en garantissant la confidentialité et l'authentification.
+                        </p>
+                        <p>
+                            <strong>Solution retenue :</strong> Déploiement de clients OpenVPN avec authentification par certificat et double facteur.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">OpenVPN</span>
+                            <span class="tech-badge">Certificats X.509</span>
+                            <span class="tech-badge">Windows 10/11</span>
+                            <span class="tech-badge">Documentation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Procédure -->
+                <div class="procedure-section">
+                    <h3>⚙️ Procédure détaillée</h3>
+                    <div class="procedure-content">
+                        <ol class="procedure-steps">
+                            <li>
+                                <strong>Préparation des certificats utilisateurs</strong><br>
+                                Génération des certificats clients via l'autorité de certification interne, exportation au format .ovpn avec clés privées et certificats CA.
+                            </li>
+                            <li>
+                                <strong>Installation du client OpenVPN</strong><br>
+                                Téléchargement de OpenVPN Connect depuis le site officiel, installation en mode administrateur sur les postes Windows des utilisateurs concernés.
+                            </li>
+                            <li>
+                                <strong>Import de la configuration VPN</strong><br>
+                                Copie du fichier .ovpn personnalisé pour chaque utilisateur dans le répertoire de configuration OpenVPN, vérification de l'intégrité des certificats.
+                            </li>
+                            <li>
+                                <strong>Configuration des paramètres de connexion</strong><br>
+                                Paramétrage de l'adresse du serveur VPN, du port (1194 UDP), activation du chiffrement AES-256-CBC et configuration de la reconnexion automatique.
+                            </li>
+                            <li>
+                                <strong>Tests de connexion</strong><br>
+                                Lancement de la connexion VPN, vérification de l'établissement du tunnel, test d'accès aux ressources internes (partages réseau, applications métier, messagerie).
+                            </li>
+                            <li>
+                                <strong>Formation de l'utilisateur</strong><br>
+                                Explication du processus de connexion VPN, remise d'un guide utilisateur simplifié, sensibilisation aux bonnes pratiques de sécurité (ne pas partager ses identifiants, se déconnecter après usage).
+                            </li>
+                            <li>
+                                <strong>Documentation et traçabilité</strong><br>
+                                Enregistrement de l'installation dans le système de ticketing, documentation de la configuration spécifique du poste et récupération du certificat de déploiement.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Résultats -->
+                <div class="procedure-section">
+                    <h3>✅ Résultats</h3>
+                    <div class="procedure-content">
+                        <p>
+                            <strong>Plus de 30 postes configurés</strong> avec accès VPN fonctionnel durant le stage, permettant aux agents de télétravailler en toute sécurité.
+                        </p>
+                        <p>
+                            <strong>Accès sécurisé garanti :</strong> Chiffrement de bout en bout AES-256, authentification par certificat empêchant tout accès non autorisé, conformité avec la politique de sécurité de l'administration.
+                        </p>
+                        <p>
+                            <strong>Support utilisateur efficace :</strong> Très peu d'incidents après déploiement grâce à la documentation fournie et à la formation des utilisateurs lors de l'installation.
+                        </p>
+                        <p>
+                            <strong>Compétences développées :</strong> Maîtrise des VPN (OpenVPN, certificats X.509), gestion PKI, accompagnement utilisateur et documentation technique.
                         </p>
                     </div>
                 </div>
@@ -2296,6 +2779,7 @@
                 <a href="#accueil">Accueil</a>
                 <a href="#parcours">Parcours</a>
                 <a href="#competences">Compétences</a>
+                <a href="#certifications">Certifications</a>
                 <a href="#projets">Projets</a>
                 <a href="#veille">Veille</a>
                 <a href="#contact">Contact</a>
